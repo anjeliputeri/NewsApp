@@ -2,6 +2,7 @@ package com.app.news.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.app.news.R
 import com.app.news.data.remote.ApiClient
 import com.app.news.data.response.NewsResponse
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         ApiClient.create().getNews().enqueue(object : Callback<NewsResponse>{
             override fun onResponse(call: Call<NewsResponse>, response: Response<NewsResponse>) {
+                Log.d("MainActivity", response.body().toString())
             }
 
             override fun onFailure(call: Call<NewsResponse>, t: Throwable) {

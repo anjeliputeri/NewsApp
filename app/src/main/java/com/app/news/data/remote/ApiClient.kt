@@ -23,7 +23,6 @@ object ApiClient {
             .addInterceptor(
                 HttpLoggingInterceptor()
                     .setLevel(HttpLoggingInterceptor.Level.BODY)
-            )
-            .build()
+            ).build()
     }
 }
